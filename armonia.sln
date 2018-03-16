@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "armonia\Interface.csproj", "{EA5FC962-4F6E-4AD2-AF32-5926B667A845}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "dataAccess\DataAccess.csproj", "{B450772C-7822-48AB-BB02-A123043A49A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{4DF85223-27D9-428F-AC3D-3C0723D6FF69}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA5FC962-4F6E-4AD2-AF32-5926B667A845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA5FC962-4F6E-4AD2-AF32-5926B667A845}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA5FC962-4F6E-4AD2-AF32-5926B667A845}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA5FC962-4F6E-4AD2-AF32-5926B667A845}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B450772C-7822-48AB-BB02-A123043A49A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B450772C-7822-48AB-BB02-A123043A49A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B450772C-7822-48AB-BB02-A123043A49A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
