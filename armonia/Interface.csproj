@@ -73,9 +73,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{4df85223-27d9-428f-ac3d-3c0723d6ff69}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\dataAccess\DataAccess.csproj">
       <Project>{B450772C-7822-48AB-BB02-A123043A49A3}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{96496e95-77d4-46bf-b930-778c46b222c3}</Project>
+      <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
