@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Interface
+namespace dataAccess
 {
     public static class program
     {
         public static void Main()
         {
-            Console.WriteLine(dataAccess.conexion.iniciar());
+
+            BonusSkins.Register();
+            SkinManager.EnableFormSkins();
+            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+            Application.Run(new Form1());
         }
     }
 }
