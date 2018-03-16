@@ -15,9 +15,11 @@ namespace dataAccess
         {
             try
             {
-                mysqlcon = new MySqlConnection("Server=35.231.83.244;Database=armoniaprueba;Uid=armonia;Pwd=am12345678;");
-                mysqlcon.Open();
-                return 1;
+                using (mysqlcon = new MySqlConnection("Server=35.231.83.244;Database=armoniaprueba;Uid=armonia;Pwd=am12345678;"))
+                {
+                    mysqlcon.Open();
+                    return 1;
+                }
             }catch(MySqlException ex)
             {
                 Console.WriteLine(ex.Message);

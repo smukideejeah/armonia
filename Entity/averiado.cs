@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public static class program
+    public class averiado
     {
-        public static void Main()
-        {
-
-        }
+        public int id_producto { get; set; }
+        public string id_sucursal { get; set; }
     }
 }

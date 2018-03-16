@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public static class program
+    public class cargo_empleado
     {
-        public static void Main()
-        {
-
-        }
+        public int id_empleado { get; set; }
+        public int id_cargo { get; set; }
     }
 }

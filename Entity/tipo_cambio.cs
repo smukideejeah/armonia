@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public static class program
+    public class tipo_cambio
     {
-        public static void Main()
-        {
-
-        }
+        public string cambio { get; set; }
+        public double valor { get; set; }
     }
 }
