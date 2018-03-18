@@ -34,5 +34,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="averiado.cs" />
+    <Compile Include="cargo.cs" />
+    <Compile Include="cargo_empleado.cs" />
+    <Compile Include="cargo_grupo.cs" />
+    <Compile Include="dir_empleado.cs" />
+    <Compile Include="empleado.cs" />
+    <Compile Include="existencia.cs" />
+    <Compile Include="factura.cs" />
+    <Compile Include="grupo_opcion.cs" />
+    <Compile Include="lin_factura.cs" />
+    <Compile Include="lin_remision.cs" />
+    <Compile Include="producto.cs" />
+    <Compile Include="program.cs" />
+    <Compile Include="remision.cs" />
+    <Compile Include="sucursal.cs" />
+    <Compile Include="tel_empleado.cs" />
+    <Compile Include="tipo_cambio.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

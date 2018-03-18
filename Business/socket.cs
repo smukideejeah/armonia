@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Armonia_Music
+namespace Business
 {
     public static class socket
     {

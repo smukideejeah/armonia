@@ -51,35 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFactura\Agregar_Producto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFactura\Agregar_Producto.Designer.cs">
-      <DependentUpon>Agregar_Producto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFactura\Factura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFactura\Factura.Designer.cs">
-      <DependentUpon>Factura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFactura\Agregar_Producto.resx">
-      <DependentUpon>Agregar_Producto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFactura\Factura.resx">
-      <DependentUpon>Factura.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +71,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{4df85223-27d9-428f-ac3d-3c0723d6ff69}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dataAccess\DataAccess.csproj">
+      <Project>{B450772C-7822-48AB-BB02-A123043A49A3}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{96496e95-77d4-46bf-b930-778c46b222c3}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

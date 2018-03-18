@@ -12,10 +12,6 @@ namespace dataAccess
         public static void Main()
         {
 
-            BonusSkins.Register();
-            SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new Form1());
         }
     }
 }
