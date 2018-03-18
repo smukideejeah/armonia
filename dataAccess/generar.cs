@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business
+namespace dataAccess
 {
-    public static class pequefun
+    public static class generar
     {
         public static string creaInsert(object o)
         {

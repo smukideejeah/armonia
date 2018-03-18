@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using Entity;
-using Business;
-
 namespace dataAccess
 {
     public static class InsertUpdDel
@@ -17,10 +14,10 @@ namespace dataAccess
             bool retur = false;
             try
             {
-                string cmd = pequefun.creaInsert(dato);
+                string cmd = generar.creaInsert(dato);
                 using (MySqlCommand mysqlc = new MySqlCommand(cmd, conexion.mysqlcon))
                 {
-                    mysqlc.Parameters.AddRange(pequefun.creaParams(dato));
+                    mysqlc.Parameters.AddRange(generar.creaParams(dato));
                     mysqlc.ExecuteNonQuery();
                 }
                 retur = true;
@@ -36,10 +33,10 @@ namespace dataAccess
             bool retur = false;
             try
             {
-                string cmd = pequefun.creaDelete(dato);
+                string cmd = generar.creaDelete(dato);
                 using (MySqlCommand mysqlc = new MySqlCommand(cmd, conexion.mysqlcon))
                 {
-                    mysqlc.Parameters.AddRange(pequefun.creaParams(dato));
+                    mysqlc.Parameters.AddRange(generar.creaParams(dato));
                     mysqlc.ExecuteNonQuery();
                 }
                 retur = true;
@@ -56,10 +53,10 @@ namespace dataAccess
             bool retur = false;
             try
             {
-                string cmd = pequefun.creaUpdate(antiguo);
+                string cmd = generar.creaUpdate(antiguo);
                 using (MySqlCommand mysqlc = new MySqlCommand(cmd, conexion.mysqlcon))
                 {
-                    mysqlc.Parameters.AddRange(pequefun.creaUpdateParams(antiguo,nuevo));
+                    mysqlc.Parameters.AddRange(generar.creaUpdateParams(antiguo,nuevo));
                     mysqlc.ExecuteNonQuery();
                 }
                 retur = true;
