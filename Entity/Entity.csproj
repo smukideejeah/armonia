@@ -53,5 +53,11 @@
     <Compile Include="tel_empleado.cs" />
     <Compile Include="tipo_cambio.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dataAccess\DataAccess.csproj">
+      <Project>{b450772c-7822-48ab-bb02-a123043a49a3}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
