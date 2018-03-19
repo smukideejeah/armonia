@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Data.v17.2" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="System" />
@@ -51,8 +52,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="program.cs" />
+    <Compile Include="formsInventario\buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsInventario\buscar.Designer.cs">
+      <DependentUpon>buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsInventario\busqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsInventario\busqueda.Designer.cs">
+      <DependentUpon>busqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsInventario\inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsInventario\inventario.Designer.cs">
+      <DependentUpon>inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsInventario\listaSucursales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsInventario\listaSucursales.Designer.cs">
+      <DependentUpon>listaSucursales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formsInventario\buscar.resx">
+      <DependentUpon>buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsInventario\busqueda.resx">
+      <DependentUpon>busqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsInventario\inventario.resx">
+      <DependentUpon>inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsInventario\listaSucursales.resx">
+      <DependentUpon>listaSucursales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -73,18 +112,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
-      <Project>{4df85223-27d9-428f-ac3d-3c0723d6ff69}</Project>
-      <Name>Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\dataAccess\DataAccess.csproj">
-      <Project>{B450772C-7822-48AB-BB02-A123043A49A3}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entity\Entity.csproj">
-      <Project>{96496e95-77d4-46bf-b930-778c46b222c3}</Project>
-      <Name>Entity</Name>
-    </ProjectReference>
+    <None Include="Resources\save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletesheetrows_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movedown_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moveup_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insertsheet_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

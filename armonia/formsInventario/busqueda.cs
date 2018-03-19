@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
-namespace armonia.frmFactura
+namespace armonia.formsInventario
 {
-    public partial class Agregar_Producto : Form
+    public partial class busqueda : DevExpress.XtraEditors.XtraForm
     {
-        public Agregar_Producto()
+        public busqueda()
         {
             InitializeComponent();
-        }
-
-        private void Agregar_Producto_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
