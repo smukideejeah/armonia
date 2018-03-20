@@ -21,13 +21,7 @@ namespace Interface
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {
-            // N paginas
-            // N grupos x paginas
-            // N items x grupos
-            int n_paginas = 4;
-            int n_grupos_paginas = 2;
-            int n_items_grupo = 3;
+        {          
             crear_ribbon_control();
         }
 

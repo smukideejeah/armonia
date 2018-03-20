@@ -12,6 +12,6 @@ namespace Entity
         public int id_cargo { get; set; }
         public string nombre_grupo { get; set; }
         public string nombre_clase { get; set; }
-        public grupo_opcion[] opciones { get; set; }
+        public List<grupo_opcion> opciones { get; set; }
     }
 }

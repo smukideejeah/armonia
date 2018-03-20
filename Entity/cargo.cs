@@ -11,6 +11,6 @@ namespace Entity
         public int id { get; set; }
         public string nombre_cargo { get; set; }
         public string interfaz { get; set; }
-        public cargo_grupo[] grupos { get; set; }
+        public List<cargo_grupo> grupos { get; set; }
     }
 }

@@ -35,18 +35,11 @@ namespace Interface
                     usuario = user,
                     passwd = password
                 };
-
-                if (bEmpleado.login(empl) != null)
-                {
-                    // con el id del usuario encontrar el cargo para los que tiene acceso
-                    Dictionary<int, object> dict = new Dictionary<int, object>();
-                    dict.Add(1, new { Text = "Azure", Count = 13, Link = "C#" });
-                    dict.Add(2, new { Count = 13, Text = "HTML", Link = "jQuery" });
-                    dict.Add(3, new { Counter = 1, Text = "Apples", Link = "Fruit" });
-                    foreach (KeyValuePair<int, object> entry in dict)
-                    {
-                        Console.WriteLine($"{entry.Key} - {string.Join(",", entry.Value)}");
-                    }
+                empleado encontrado = bEmpleado.login(empl);
+                if (encontrado != null)
+                {                  
+                    BCargo cargo = new BCargo();
+                    Dictionary<int, cargo> dictionary = cargo.obtener_cargos(encontrado.id);
                     Home inicio = new Home();
                     inicio.Show();
                 }
