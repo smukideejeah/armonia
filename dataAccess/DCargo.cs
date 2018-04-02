@@ -29,7 +29,7 @@ namespace dataAccess
                                 " cg.nombre_clase, " +
                                 " go.id AS id_opcion, " +
                                 " go.nombre_opcion, " +
-                                " go.nombre_clase, " +
+                                " go.nombre_clase AS nombre_clase_opcion, " +
                                 " go.glyph " +
                               " FROM cargo AS c " +
                               " INNER JOIN cargo_empleado AS ce ON c.id = ce.id_cargo " +
@@ -48,7 +48,7 @@ namespace dataAccess
 
                     while (lector.Read())
                     {
-                        Console.WriteLine(lector["nombre_cargo"]);
+                        // Agregar solo una vez cada cargo
                         if (!cargos.ContainsKey(Convert.ToInt32(lector["id_cargo"]))) {
                             cargos.Add(Convert.ToInt32(lector["id_cargo"]), new cargo
                             {
@@ -57,7 +57,8 @@ namespace dataAccess
                                 grupos = new List<cargo_grupo>()
                             });
                         }
-                       
+
+                        // Verificar si el cargo creado tiene grupos, si no es asi agregarlo                      
                         cargo_grupo existe_en_lista = cargos[Convert.ToInt32(lector["id_cargo"])].grupos.Find(x => x.id == Convert.ToInt32(lector["id_grupo"]));
                         if (existe_en_lista == null) { 
                             cargos[Convert.ToInt32(lector["id_cargo"])].grupos.Add(
@@ -68,12 +69,17 @@ namespace dataAccess
                                 }
                             );
                         }
+                        
+                        // Obtener el indice del grupo actual
+                        int index = cargos[Convert.ToInt32(lector["id_cargo"])].grupos.FindIndex(x => x.id == Convert.ToInt32(lector["id_grupo"]));
 
-                        // el indce [0] tiene que ser atumatico dependiendo del elemento
-                        cargos[Convert.ToInt32(lector["id_cargo"])].grupos[0].opciones.Add( new grupo_opcion {
+                        // Agregar las opciones a dicho grupo
+                        cargos[Convert.ToInt32(lector["id_cargo"])].grupos[index].opciones.Add( new grupo_opcion {
                             id = Convert.ToInt32(lector["id_opcion"]),
                             id_grupo = Convert.ToInt32(lector["id_grupo"]),
-                            nombre_opcion = Convert.ToString(lector["nombre_opcion"])
+                            nombre_opcion = Convert.ToString(lector["nombre_opcion"]),
+                            nombre_clase = Convert.ToString(lector["nombre_clase_opcion"]),
+                            glyph = Convert.ToString(lector["glyph"])
                         });
                     }
                 }

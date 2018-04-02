@@ -1,6 +1,6 @@
 ﻿namespace Interface
 {
-    partial class Form1
+    partial class agregar
     {
         /// <summary>
         /// Variable del diseñador necesaria.

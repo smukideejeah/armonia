@@ -16,7 +16,14 @@ namespace Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+
+            Login login = new Login();
+            Application.Run(login);
+
+            if (login.usuario_autenticado)
+            {
+                Application.Run(new Home(login.diccionario_de_cargos, login.encontrado));
+            }
         }
     }
 }
