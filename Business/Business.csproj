@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="inventario\CargaData.cs" />
+    <Compile Include="inventario\cargaDatosDialogo.cs" />
+    <Compile Include="inventario\metodos.cs" />
+    <Compile Include="inventario\SystemAndUserData.cs" />
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="socket.cs" />

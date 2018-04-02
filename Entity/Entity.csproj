@@ -52,6 +52,8 @@
     <Compile Include="sucursal.cs" />
     <Compile Include="tel_empleado.cs" />
     <Compile Include="tipo_cambio.cs" />
+    <Compile Include="vistas\inventario\busqueda.cs" />
+    <Compile Include="vistas\inventario\todoexistencia.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dataAccess\DataAccess.csproj">
@@ -59,5 +61,6 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

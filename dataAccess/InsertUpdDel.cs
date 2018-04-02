@@ -22,7 +22,7 @@ namespace dataAccess
                 }
                 retur = true;
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
                 retur = false;
             }
@@ -33,6 +33,7 @@ namespace dataAccess
             bool retur = false;
             try
             {
+                conexion.iniciar();
                 string cmd = generar.creaDelete(dato);
                 using (MySqlCommand mysqlc = new MySqlCommand(cmd, conexion.mysqlcon))
                 {
