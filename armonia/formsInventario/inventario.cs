@@ -200,19 +200,69 @@ namespace armonia.formsInventario
                 bu.descripcion = descripcion.Text;
                 
             }
-                
         }
+
+
         void inserta(object sender, EventArgs e)
         {
-            DialogResult ds = MessageBox.Show("Estas seguro que deseas eliminar el archivo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult ds = MessageBox.Show("Estas seguro que deseas insertal el producto?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (ds == DialogResult.OK)
-                MessageBox.Show("Eliminado", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                Entity.producto p = new Entity.producto();
+                p.marca = marca.Text;
+                p.modelo = model.Text;
+                p.descripcion = descripcion.Text;
+                p.imagen = Business.inventario.metodos.ImageToBase64(imagen.Image, imagen.Image.RawFormat);
+                if (minimo.Checked == true) p.alerta_minimo = 1;
+                else p.alerta_minimo = 0;
+                dataAccess.InsertUpdDel.insertar(p);
+
+                int idp = Business.inventario.metodos.getid(p);
+
+                Entity.existencia ex = new Entity.existencia();
+                ex.id_prod = idp;
+
+                ex.id_sucursal = "leon";
+                ex.precio = int.Parse(pleon.Text);
+                ex._existencia = int.Parse(uleon.Text);
+                dataAccess.InsertUpdDel.insertar(ex);
+
+                ex.id_sucursal = "chinandega";
+                ex.precio = int.Parse(pchinandega.Text);
+                ex._existencia = int.Parse(uchinandega.Text);
+                dataAccess.InsertUpdDel.insertar(ex);
+
+                ex.id_sucursal = "matagalpa";
+                ex.precio = int.Parse(pmatagalpa.Text);
+                ex._existencia = int.Parse(umatagalpa.Text);
+                dataAccess.InsertUpdDel.insertar(ex);
+
+                ex.id_sucursal = "esteli";
+                ex.precio = int.Parse(pesteli.Text);
+                ex._existencia = int.Parse(uesteli.Text);
+                dataAccess.InsertUpdDel.insertar(ex); 
+
+                ex.id_sucursal = "jinotega";
+                ex.precio = int.Parse(pjinotega.Text);
+                ex._existencia = int.Parse(ujinotega.Text);
+                dataAccess.InsertUpdDel.insertar(ex);
+
+                limpia();
+                MessageBox.Show("Insertado", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+  
+            }
+               
         }
         void elimina(object sender, EventArgs e)
         {
-            DialogResult ds = MessageBox.Show("Estas seguro que deseas eliminar el archivo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult ds = MessageBox.Show("Estas seguro que deseas eliminar este producto?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (ds == DialogResult.OK)
+            {
+
+                limpia();
                 MessageBox.Show("Eliminado", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                
         }
     }
 }

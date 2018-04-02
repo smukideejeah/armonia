@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity;
 
 namespace Business.inventario
 {
@@ -43,6 +45,13 @@ namespace Business.inventario
             }
         }
 
-
+        public static int getid(producto p)
+        {
+            string cmd = "select id from producto" +
+                "where" +
+                "modelo = '" + p.modelo + "' and marca = '" + p.marca + "' and descripcion = '" + p.descripcion + "'";
+            DataTable dt = dataAccess.inventario.select.recoge(cmd);
+            return int.Parse(dt.Rows[0][0].ToString());
+        }
     }
 }
